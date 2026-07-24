@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Google Sans", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    background: #000000f6;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 720px;
+    padding: 20px;
+}
+
+.welcome {
+    font-size: 20px;
+    font-weight: 200;
+    color: #e3e3e3;
+    margin-bottom: 32px;
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+
+.chat-container {
+    display: none;
+    max-width: 100%;
+    margin: auto;
+    padding: 20px 20px 130px;
+}
+
+.message {
+    display: flex;
+    margin: 18px 0;
+}
+
+.user {
+    justify-content: flex-end;
+}
+
+.ai {
+    justify-content: flex-start;
+}
+
+.bubble {
+    max-width: 100%;
+    padding: 15px 18px;
+    border-radius: 20px;
+    line-height: 1.6;
+}
+
+.user .bubble {
+    background: #2d2d2d;
+}
+
+.ai .bubble {
+    background: #1b1b1b;
+}
+
+.actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+    color: #999;
+}
+
+.input-area {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #2d2d2d;
+    border-radius: 30px;
+    padding: 12px 20px;
+    gap: 12px;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-area:focus-within {
+    background-color: #28292a;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+body.has-input .input-area {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 48px);
+    max-width: 720px;
+    z-index: 100;
+    background-color: #2d2d2d;
+    box-shadow: -2px 31px 9px 71px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -2px 31px 9px 71px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -2px 31px 9px 71px rgba(0, 0, 0, 0.75);
+}
+
+input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #e3e3e3;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+input::placeholder {
+    color: #8e918f;
+}
+
+.sendBtn {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #FAF9F6;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sendBtn:hover {
+    background-color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.sendBtn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
